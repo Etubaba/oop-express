@@ -478,3 +478,19 @@ Require stack:
     at Module._compile (node:internal/modules/cjs/loader:1155:14)
     at Module.m._compile (C:\Users\hp\Desktop\sql todo\node_modules\ts-node\src\index.ts:1618:23)
     at Module._extensions..js (node:internal/modules/cjs/loader:1209:10)
+2023-06-23 18:35:42 error: uncaughtException: logger is not defined
+ReferenceError: logger is not defined
+    at Server.<anonymous> (C:\Users\hp\Desktop\sql todo\src\app.ts:31:13)
+    at Object.onceWrapper (node:events:627:28)
+    at Server.emit (node:events:513:28)
+    at Server.emit (node:domain:489:12)
+    at emitListeningNT (node:net:1497:10)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+2023-06-23 18:35:52 error: uncaughtException: logger is not defined
+ReferenceError: logger is not defined
+    at Server.<anonymous> (C:\Users\hp\Desktop\sql todo\src\app.ts:31:13)
+    at Object.onceWrapper (node:events:627:28)
+    at Server.emit (node:events:513:28)
+    at Server.emit (node:domain:489:12)
+    at emitListeningNT (node:net:1497:10)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
