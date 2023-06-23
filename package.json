@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "build": "npx tsc",
+    "build": "rimraf dist && npx tsc",
     "start": "npm run build && cross-env NODE_ENV=production nodemon node dist/src/index.js",
     "dist": "tsc -p .",
     "dev": "cross-env NODE_ENV=development nodemon",
@@ -24,6 +24,7 @@
     "cross-env": "^7.0.3",
     "nodemon": "^2.0.20",
     "prisma": "^4.4.0",
+    "rimraf": "^5.0.1",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.1.3"
