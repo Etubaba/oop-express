@@ -11,7 +11,6 @@ const helmet_1 = tslib_1.__importDefault(require("helmet"));
 const hpp_1 = tslib_1.__importDefault(require("hpp"));
 const config_1 = require("../config");
 const error_middleware_1 = require("./middleware/error.middleware");
-const logger_1 = require("../src/utils/logger");
 class App {
     constructor(routes) {
         this.app = (0, express_1.default)();
@@ -23,10 +22,10 @@ class App {
     }
     listen() {
         this.app.listen(this.port, () => {
-            logger_1.logger.info(`=================================`);
-            logger_1.logger.info(`======= ENV: ${this.env} =======`);
-            logger_1.logger.info(`🚀 App listening on the port ${this.port}`);
-            logger_1.logger.info(`=================================`);
+            console.info(`=================================`);
+            console.info(`======= ENV: ${this.env} =======`);
+            console.info(`🚀 App listening on the port ${this.port}`);
+            console.info(`=================================`);
         });
     }
     getServer() {
