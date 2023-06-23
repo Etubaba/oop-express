@@ -11,6 +11,7 @@ const helmet_1 = tslib_1.__importDefault(require("helmet"));
 const hpp_1 = tslib_1.__importDefault(require("hpp"));
 const config_1 = require("../config");
 const error_middleware_1 = require("./middleware/error.middleware");
+// import { logger, stream } from '../src/utils/logger';
 class App {
     constructor(routes) {
         this.app = (0, express_1.default)();

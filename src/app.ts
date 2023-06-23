@@ -9,7 +9,7 @@ import morgan from 'morgan';
 import { NODE_ENV, PORT, LOG_FORMAT, ORIGIN, CREDENTIALS } from '../config';
 import { Routes } from '../interface/routes.interface';
 import { ErrorMiddleware } from './middleware/error.middleware';
-import { logger, stream } from '../src/utils/logger';
+// import { logger, stream } from '../src/utils/logger';
 
 export class App {
     public app: express.Application;
