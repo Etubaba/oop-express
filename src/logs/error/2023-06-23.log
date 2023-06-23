@@ -428,3 +428,53 @@ ReferenceError: service_1 is not defined
     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:81:12)
 2023-06-23 17:04:14 error: [POST] /api/v1/createtodo >> StatusCode:: 400, Message:: Unexpected token } in JSON at position 111
 2023-06-23 17:04:33 error: [POST] /api/v1/createtodo >> StatusCode:: 400, Message:: title should not be empty,title must be a string
+2023-06-23 18:15:25 error: uncaughtException: Cannot find module 'C:\Users\hp\Desktop\sql todo\index.js'. Please verify that the package.json has a valid "main" entry
+Error: Cannot find module 'C:\Users\hp\Desktop\sql todo\index.js'. Please verify that the package.json has a valid "main" entry
+    at tryPackage (node:internal/modules/cjs/loader:393:19)
+    at Function.Module._findPath (node:internal/modules/cjs/loader:606:18)
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:971:27)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue (C:\Users\hp\Desktop\sql todo\node_modules\@cspotcode\source-map-support\source-map-support.js:811:30)
+    at Function.Module._resolveFilename (C:\Users\hp\Desktop\sql todo\node_modules\tsconfig-paths\src\register.ts:115:36)
+    at Function.Module._load (node:internal/modules/cjs/loader:833:27)
+    at Module.require (node:internal/modules/cjs/loader:1057:19)
+    at require (node:internal/modules/cjs/helpers:103:18)
+    at Object.<anonymous> (C:\Users\hp\Desktop\sql todo\src\app.ts:12:1)
+    at Module._compile (node:internal/modules/cjs/loader:1155:14)
+2023-06-23 18:15:30 error: uncaughtException: Cannot find module 'C:\Users\hp\Desktop\sql todo\index.js'. Please verify that the package.json has a valid "main" entry
+Error: Cannot find module 'C:\Users\hp\Desktop\sql todo\index.js'. Please verify that the package.json has a valid "main" entry
+    at tryPackage (node:internal/modules/cjs/loader:393:19)
+    at Function.Module._findPath (node:internal/modules/cjs/loader:606:18)
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:971:27)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue (C:\Users\hp\Desktop\sql todo\node_modules\@cspotcode\source-map-support\source-map-support.js:811:30)
+    at Function.Module._resolveFilename (C:\Users\hp\Desktop\sql todo\node_modules\tsconfig-paths\src\register.ts:115:36)
+    at Function.Module._load (node:internal/modules/cjs/loader:833:27)
+    at Module.require (node:internal/modules/cjs/loader:1057:19)
+    at require (node:internal/modules/cjs/helpers:103:18)
+    at Object.<anonymous> (C:\Users\hp\Desktop\sql todo\src\app.ts:12:1)
+    at Module._compile (node:internal/modules/cjs/loader:1155:14)
+2023-06-23 18:15:34 error: uncaughtException: Cannot read properties of undefined (reading 'info')
+TypeError: Cannot read properties of undefined (reading 'info')
+    at Server.<anonymous> (C:\Users\hp\Desktop\sql todo\src\app.ts:31:20)
+    at Object.onceWrapper (node:events:627:28)
+    at Server.emit (node:events:513:28)
+    at Server.emit (node:domain:489:12)
+    at emitListeningNT (node:net:1497:10)
+    at processTicksAndRejections (node:internal/process/task_queues:82:21)
+2023-06-23 18:15:35 error: uncaughtException: Cannot find module '../src/utils/'
+Require stack:
+- C:\Users\hp\Desktop\sql todo\src\app.ts
+- C:\Users\hp\Desktop\sql todo\src\index.ts
+Error: Cannot find module '../src/utils/'
+Require stack:
+- C:\Users\hp\Desktop\sql todo\src\app.ts
+- C:\Users\hp\Desktop\sql todo\src\index.ts
+    at Function.Module._resolveFilename (node:internal/modules/cjs/loader:985:15)
+    at Function.Module._resolveFilename.sharedData.moduleResolveFilenameHook.installedValue (C:\Users\hp\Desktop\sql todo\node_modules\@cspotcode\source-map-support\source-map-support.js:811:30)
+    at Function.Module._resolveFilename (C:\Users\hp\Desktop\sql todo\node_modules\tsconfig-paths\src\register.ts:115:36)
+    at Function.Module._load (node:internal/modules/cjs/loader:833:27)
+    at Module.require (node:internal/modules/cjs/loader:1057:19)
+    at require (node:internal/modules/cjs/helpers:103:18)
+    at Object.<anonymous> (C:\Users\hp\Desktop\sql todo\src\app.ts:12:1)
+    at Module._compile (node:internal/modules/cjs/loader:1155:14)
+    at Module.m._compile (C:\Users\hp\Desktop\sql todo\node_modules\ts-node\src\index.ts:1618:23)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1209:10)
