@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "C:\\Users\\hp\\Desktop\\sql todo\\src\\logs\\debug\\.812571e7f1c0b278b1cb565e1ef4c92dd94214de-audit.json",
+    "files": [
+        {
+            "date": 1687526247324,
+            "name": "C:\\Users\\hp\\Desktop\\sql todo\\src\\logs\\debug\\2023-06-23.log",
+            "hash": "9511545ee16018211a54a8f4ea84a694f18e0191b6339649dd4c16fadfcf3ad5"
+        }
+    ],
+    "hashType": "sha256"
+}
