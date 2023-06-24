@@ -19,6 +19,7 @@ let userService = class userService {
                     email: userdata.email,
                     phone: userdata.phone,
                     password: hashed_password,
+                    country: userdata.country
                 },
             });
             return {
