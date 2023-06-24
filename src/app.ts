@@ -9,6 +9,9 @@ import morgan from 'morgan';
 import { NODE_ENV, PORT, LOG_FORMAT, ORIGIN, CREDENTIALS } from '../config';
 import { Routes } from '../interface/routes.interface';
 import { ErrorMiddleware } from './middleware/error.middleware';
+import Container from 'typedi';
+import { PrismaService } from './prisma/prisma.service';
+import { PrismaClient } from '@prisma/client';
 // import { logger, stream } from '../src/utils/logger';
 
 export class App {
@@ -27,11 +30,17 @@ export class App {
     }
 
     public listen() {
+        const connectDB = new PrismaClient()
+
         this.app.listen(this.port, () => {
-            console.info(`=================================`);
-            console.info(`======= ENV: ${this.env} =======`);
-            console.info(`🚀 App listening on the port ${this.port}`);
-            console.info(`=================================`);
+            connectDB.$connect().then(() => {
+                console.log("🚀 Database Connected==========🔗🔗🔗🔗🔗🔗🔗🔗=======>");
+                console.info(`🚀 App listening on the port ${this.port}`);
+
+            }).catch((error) => {
+                console.log(error.message);
+            });
+
         });
     }
 
@@ -48,6 +57,7 @@ export class App {
         this.app.use(express.json());
         this.app.use(express.urlencoded({ extended: true }));
         this.app.use(cookieParser());
+        this.app.disable
     }
 
     private initializeRoutes(routes: Routes[]) {

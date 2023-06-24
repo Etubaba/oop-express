@@ -4,17 +4,100 @@
 generator client {
   provider = "prisma-client-js"
 }
+
 datasource db {
-  provider ="mysql"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
-model todo{
-  id Int @id @default(autoincrement())
-  title String 
-  description String
-  status Boolean
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+model Users {
+  id                    String          @id @default(auto()) @map("_id") @db.ObjectId
+  email                 String          @unique
+  full_name            String
+  phone                 String          @unique
+  password              String
+  country               String?
+  verified              Boolean?        @default(false)
+  deposit               Float?           @default(0)
+  referal_award         Float? @default(0)
+  referal_code          String?         @unique
+  referals              String[]
+  profits               Float? @default(0)
+  created_at            DateTime        @default(now())
+  updated_at            DateTime        @updatedAt
+  transaction_histories Transactions[]
+  investments           InvestmentOpt[]
+  otp                   Otp?
+
+  @@map("users")
 }
 
+model Transactions {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  method     String
+  amount     Float
+  recipient  String?
+  status     Boolean?  @default(false)
+  user       Users    @relation(fields: [trxId], references: [id],onDelete:Cascade)
+  trxId      String   @db.ObjectId
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@map("transactions")
+}
+
+model InvestmentOpt {
+  id                 String   @id @default(auto()) @map("_id") @db.ObjectId
+  user               Users    @relation(fields: [investId], references: [id],onDelete:Cascade)
+  plan_type          String
+  plan_duration      DateTime
+  percentage_returns String
+  months String?
+  completed          Boolean?  @default(false)
+  iof                Float   
+  roi                Float   @default(0)
+  investId           String   @db.ObjectId
+  created_at         DateTime @default(now())
+  updated_at         DateTime @updatedAt
+
+  @@map("investmentopt")
+}
+
+model Plans {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  status      Boolean?  @default(true)
+  type        String
+  description  String
+  duration    String
+  picture     String?
+  percentage  String
+  min_deposit Float
+  max_deposit Float
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+
+  @@map("plans")
+}
+
+model Administrators {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  email      String   @unique
+  password   String
+  name       String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@map("administrators")
+}
+
+model Otp {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  code       String
+  expiration DateTime
+  user       Users    @relation(fields: [otpId], references: [id],onDelete:Cascade)
+  otpId      String   @unique @db.ObjectId
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@map("otp")
+}

@@ -11,6 +11,7 @@ const helmet_1 = tslib_1.__importDefault(require("helmet"));
 const hpp_1 = tslib_1.__importDefault(require("hpp"));
 const config_1 = require("../config");
 const error_middleware_1 = require("./middleware/error.middleware");
+const client_1 = require("@prisma/client");
 // import { logger, stream } from '../src/utils/logger';
 class App {
     constructor(routes) {
@@ -22,11 +23,14 @@ class App {
         this.initializeErrorHandling();
     }
     listen() {
+        const connectDB = new client_1.PrismaClient();
         this.app.listen(this.port, () => {
-            console.info(`=================================`);
-            console.info(`======= ENV: ${this.env} =======`);
-            console.info(`🚀 App listening on the port ${this.port}`);
-            console.info(`=================================`);
+            connectDB.$connect().then(() => {
+                console.log("🚀 Database Connected==========🔗🔗🔗🔗🔗🔗🔗🔗=======>");
+                console.info(`🚀 App listening on the port ${this.port}`);
+            }).catch((error) => {
+                console.log(error.message);
+            });
         });
     }
     getServer() {
@@ -41,6 +45,7 @@ class App {
         this.app.use(express_1.default.json());
         this.app.use(express_1.default.urlencoded({ extended: true }));
         this.app.use((0, cookie_parser_1.default)());
+        this.app.disable;
     }
     initializeRoutes(routes) {
         routes.forEach(route => {
