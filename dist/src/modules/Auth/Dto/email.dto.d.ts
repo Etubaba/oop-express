@@ -1,3 +1,3 @@
-export declare class Email {
+export default class Email {
     email: string;
 }

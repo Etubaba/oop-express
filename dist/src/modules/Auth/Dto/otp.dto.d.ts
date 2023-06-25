@@ -1,3 +1,3 @@
-export declare class otpDTO {
+export default class otpDTO {
     otp: string;
 }

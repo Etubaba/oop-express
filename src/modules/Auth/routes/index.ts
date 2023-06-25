@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { Routes } from "../../../../interface/routes.interface";
 import { ValidationMiddleware } from "../../../middleware/validation.middleware";
-import RegisterDto from "../dto/register.dto";
+import RegisterDto from "@/modules/Auth/dto/register.dto";
 import { AuthController } from "../controller";
 import LoginDto from "../dto/login.dto";
 import otpDTO from "../dto/otp.dto";

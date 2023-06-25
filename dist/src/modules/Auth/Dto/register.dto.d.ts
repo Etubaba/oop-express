@@ -1,4 +1,4 @@
-export declare class RegisterDto {
+export default class RegisterDto {
     full_name: string;
     email: string;
     phone: string;

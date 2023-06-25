@@ -1,8 +1,8 @@
 import { PrismaClient, Users } from "@prisma/client";
-import { RegisterDto } from "../dto/register.dto";
+import RegisterDto from "../dto/register.dto";
 import LoginDto from "../dto/login.dto";
-import { Email } from "../dto/email.dto";
-import { otpDTO } from "../dto/otp.dto";
+import Email from "../dto/email.dto";
+import otpDTO from "../dto/otp.dto";
 export default class userService {
     prisma: PrismaClient<import(".prisma/client").Prisma.PrismaClientOptions, never, import(".prisma/client").Prisma.RejectOnNotFound | import(".prisma/client").Prisma.RejectPerOperation>;
     createUser(userdata: RegisterDto, ref: string): Promise<{

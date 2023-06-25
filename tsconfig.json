@@ -21,7 +21,7 @@
       "@/*": ["*"],
       "@config": ["config"],
       "@controllers/*": ["controllers/*"],
-      "@dtos/*": ["dtos/*"],
+      "@dtos/*": ["src/modules/*"],
       "@exceptions/*": ["exceptions/*"],
       "@interfaces/*": ["interfaces/*"],
       "@middlewares/*": ["middlewares/*"],
