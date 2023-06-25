@@ -7,8 +7,8 @@ const HttpException_1 = require("../../../utils/HttpException");
 const argon = tslib_1.__importStar(require("argon2"));
 const crypto_1 = require("crypto");
 const runtime_1 = require("@prisma/client/runtime");
-const otp_template_1 = require("@/modules/Email/templates/otp.template");
-const service_1 = tslib_1.__importDefault(require("@/modules/Email/service"));
+const otp_template_1 = require("../../Email/templates/otp.template");
+const index_1 = tslib_1.__importDefault(require("../../Email/service/index"));
 let userService = class userService {
     constructor() {
         this.prisma = new client_1.PrismaClient;
@@ -181,7 +181,7 @@ let userService = class userService {
         }
     }
     async sendOTP(email) {
-        const emailService = typedi_1.default.get(service_1.default);
+        const emailService = typedi_1.default.get(index_1.default);
         try {
             let user;
             // checking if loggin method is email or phone number #############
@@ -255,7 +255,7 @@ let userService = class userService {
         }
     }
     async verifyOTP(email, otp) {
-        const emailService = typedi_1.default.get(service_1.default);
+        const emailService = typedi_1.default.get(index_1.default);
         try {
             const getToday = new Date();
             const user = await this.prisma.users.findUnique({

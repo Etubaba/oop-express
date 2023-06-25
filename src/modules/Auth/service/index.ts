@@ -7,8 +7,8 @@ import * as argon from "argon2"
 import { randomBytes } from 'crypto';
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime";
 import Email from "../dto/email.dto";
-import { sendOTP } from "@/modules/Email/templates/otp.template";
-import EmailService from "@/modules/Email/service";
+import { sendOTP } from "../../Email/templates/otp.template";
+import EmailService from "../../Email/service/index";
 import otpDTO from "../dto/otp.dto";
 
 @Service()
