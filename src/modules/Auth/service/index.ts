@@ -187,7 +187,7 @@ export default class userService {
       if (!user) {
         return {
           status: false,
-          message: "Invalid email address or phone"
+          message: "Invalid email address or password"
         }
       }
 
