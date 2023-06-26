@@ -1,10 +1,10 @@
 import { Request, RequestHandler, Response } from "express";
-import { RegisterDto } from "../dto/register.dto";
+import { RegisterDto } from "../Dto/register.dto";
 import { Container, Service } from "typedi"
 import userService from "../service";
-import { LoginDto } from "../dto/login.dto";
-import { Email } from "../dto/email.dto";
-import { otpDTO } from "../dto/otp.dto";
+import { LoginDto } from "../Dto/login.dto";
+import { Email } from "../Dto/email.dto";
+import { otpDTO } from "../Dto/otp.dto";
 
 export class AuthController {
 
