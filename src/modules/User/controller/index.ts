@@ -11,7 +11,7 @@ export default class UserController {
         try {
             const data: CreateTrnDto = req.body
             const response = await userService_.creatuser_transation(data)
-            res.status(200).json(response);
+            res.status(response.status_code).json(response);
         } catch (error) {
             res.status(500).json({
                 message: error.message || 'Internal Server Error',

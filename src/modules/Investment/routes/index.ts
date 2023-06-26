@@ -5,7 +5,6 @@ import TransactionsController from "../controller";
 
 
 
-
 export class TransactionRoute implements Routes {
     public path = '/transaction';
     public router = Router();
