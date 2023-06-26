@@ -1,15 +1,15 @@
 import { PrismaClient, Users } from "@prisma/client";
-import RegisterDto from "../dto/register.dto";
+import {RegisterDto} from "../dto/register.dto";
 import Container, { Service } from "typedi";
 import { HttpException } from "../../../utils/HttpException";
-import LoginDto from "../dto/login.dto";
+import {LoginDto} from "../dto/login.dto";
 import * as argon from "argon2"
 import { randomBytes } from 'crypto';
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime";
-import Email from "../dto/email.dto";
+import { Email } from "../dto/email.dto";
 import { sendOTP } from "../../Email/templates/otp.template";
 import EmailService from "../../Email/service/index";
-import otpDTO from "../dto/otp.dto";
+import { otpDTO } from "../dto/otp.dto";
 
 @Service()
 export default class userService {

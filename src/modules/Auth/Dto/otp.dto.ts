@@ -1,6 +1,6 @@
 import { IsNotEmpty, IsString } from "class-validator";
 
-export class otpDTO {
+export  class otpDTO {
     @IsNotEmpty()
     @IsString()
     otp: string

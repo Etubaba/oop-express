@@ -3,7 +3,7 @@ import { IsNotEmpty, IsOptional, IsString } from "class-validator"
 
 
 
-export default class LoginDto {
+export  class LoginDto {
 
     @IsNotEmpty()
     @IsString()

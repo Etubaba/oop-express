@@ -1,11 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.RegisterDto = void 0;
 const tslib_1 = require("tslib");
 const class_validator_1 = require("class-validator");
 const class_transformer_1 = require("class-transformer");
 class RegisterDto {
 }
-exports.default = RegisterDto;
+exports.RegisterDto = RegisterDto;
 tslib_1.__decorate([
     (0, class_validator_1.IsString)(),
     (0, class_validator_1.IsNotEmpty)(),

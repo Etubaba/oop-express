@@ -1,10 +1,10 @@
 import { Request, RequestHandler, Response } from "express";
-import  RegisterDto  from "../dto/register.dto";
+import { RegisterDto } from "../dto/register.dto";
 import { Container, Service } from "typedi"
 import userService from "../service";
-import LoginDto from "../dto/login.dto";
-import  Email from "../dto/email.dto";
-import  otpDTO  from "../dto/otp.dto";
+import { LoginDto } from "../dto/login.dto";
+import { Email } from "../dto/email.dto";
+import { otpDTO } from "../dto/otp.dto";
 
 export class AuthController {
 
@@ -90,7 +90,7 @@ export class AuthController {
             const data: otpDTO = req.body
             const { email } = req.query
             const mail: string = email + ""
-            const response = await userService_.verifyOTP(mail,data)
+            const response = await userService_.verifyOTP(mail, data)
             res.status(200).json(response);
         } catch (error) {
             res.status(500).json({
