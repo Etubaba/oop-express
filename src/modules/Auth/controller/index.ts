@@ -5,18 +5,19 @@ import userService from "../service";
 import { LoginDto } from "../Dto/login.dto";
 import { Email } from "../Dto/email.dto";
 import { otpDTO } from "../Dto/otp.dto";
+import authService from "../service";
 
 export class AuthController {
 
 
     async createUser(req: Request, res: Response) {
-        const userService_ = Container.get<userService>(userService)
+        const authService_ = Container.get<authService>(authService)
 
         try {
             const data: RegisterDto = req.body
             const { ref } = req.query
             const ref_code: string = ref + ""
-            const response = await userService_.createUser(data, ref_code)
+            const response = await authService_.createUser(data, ref_code)
             res.status(200).json(response);
         } catch (error) {
             res.status(500).json({

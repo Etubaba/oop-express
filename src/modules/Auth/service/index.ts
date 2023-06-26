@@ -12,7 +12,7 @@ import EmailService from "../../Email/service/index";
 import { otpDTO } from "../Dto/otp.dto";
 
 @Service()
-export default class userService {
+export default class authService {
   public prisma = new PrismaClient
 
   public async createUser(userdata: RegisterDto, ref: string) {

@@ -5,6 +5,6 @@ import AdminRoute from './modules/Admin/routes';
 
 ValidateEnv();
 
-const app = new App([new AuthRoute()]);
+const app = new App([new AuthRoute(), new AdminRoute()]);
 
 app.listen();
