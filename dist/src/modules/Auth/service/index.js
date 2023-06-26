@@ -9,7 +9,7 @@ const crypto_1 = require("crypto");
 const runtime_1 = require("@prisma/client/runtime");
 const otp_template_1 = require("../../Email/templates/otp.template");
 const index_1 = tslib_1.__importDefault(require("../../Email/service/index"));
-let userService = class userService {
+let authService = class authService {
     constructor() {
         this.prisma = new client_1.PrismaClient;
     }
@@ -308,8 +308,8 @@ let userService = class userService {
         }
     }
 };
-userService = tslib_1.__decorate([
+authService = tslib_1.__decorate([
     (0, typedi_1.Service)()
-], userService);
-exports.default = userService;
+], authService);
+exports.default = authService;
 //# sourceMappingURL=index.js.map

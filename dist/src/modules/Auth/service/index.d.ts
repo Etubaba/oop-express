@@ -3,7 +3,7 @@ import { RegisterDto } from "../Dto/register.dto";
 import { LoginDto } from "../Dto/login.dto";
 import { Email } from "../Dto/email.dto";
 import { otpDTO } from "../Dto/otp.dto";
-export default class userService {
+export default class authService {
     prisma: PrismaClient<import(".prisma/client").Prisma.PrismaClientOptions, never, import(".prisma/client").Prisma.RejectOnNotFound | import(".prisma/client").Prisma.RejectPerOperation>;
     createUser(userdata: RegisterDto, ref: string): Promise<{
         status: boolean;

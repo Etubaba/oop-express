@@ -4,14 +4,15 @@ exports.AuthController = void 0;
 const tslib_1 = require("tslib");
 const typedi_1 = require("typedi");
 const service_1 = tslib_1.__importDefault(require("../service"));
+const service_2 = tslib_1.__importDefault(require("../service"));
 class AuthController {
     async createUser(req, res) {
-        const userService_ = typedi_1.Container.get(service_1.default);
+        const authService_ = typedi_1.Container.get(service_2.default);
         try {
             const data = req.body;
             const { ref } = req.query;
             const ref_code = ref + "";
-            const response = await userService_.createUser(data, ref_code);
+            const response = await authService_.createUser(data, ref_code);
             res.status(200).json(response);
         }
         catch (error) {

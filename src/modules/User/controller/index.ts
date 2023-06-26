@@ -23,8 +23,7 @@ export default class UserController {
     async findOne(req: Request, res: Response) {
         const userService_ = Container.get(userService)
         try {
-            const data = req.params
-            const userid = data + ""
+            const {id:userid} = req.params
             const response = await userService_.findOne(userid)
             res.status(response.status_code).json(response);
         } catch (error) {
@@ -51,8 +50,7 @@ export default class UserController {
     async deleteUser(req: Request, res: Response) {
         const userService_ = Container.get(userService)
         try {
-            const data = req.params
-            const userid = data + ""
+            const { id: userid } = req.params
             const response = await userService_.deleteUser(userid)
             res.status(response.status_code).json(response);
         } catch (error) {
@@ -67,9 +65,8 @@ export default class UserController {
     async update(req: Request, res: Response) {
         const userService_ = Container.get(userService)
         try {
-            const data = req.params
+            const { id: userid } = req.params
             const updatedata: UpdateUserDto = req.body
-            const userid = data + ""
             const response = await userService_.update(userid, updatedata)
             res.status(response.status_code).json(response);
         } catch (error) {
