@@ -1,4 +1,4 @@
-import { HttpException } from "@/utils/HttpException";
+import { HttpException } from "../../../utils/HttpException";
 import { PrismaClient } from "@prisma/client";
 import { Service } from "typedi";
 import { CreateTrnDto } from "../dto/create_transaction.dto";

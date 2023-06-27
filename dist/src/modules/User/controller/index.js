@@ -21,8 +21,7 @@ class UserController {
     async findOne(req, res) {
         const userService_ = typedi_1.default.get(service_1.default);
         try {
-            const data = req.params;
-            const userid = data + "";
+            const { id: userid } = req.params;
             const response = await userService_.findOne(userid);
             res.status(response.status_code).json(response);
         }
@@ -49,8 +48,7 @@ class UserController {
     async deleteUser(req, res) {
         const userService_ = typedi_1.default.get(service_1.default);
         try {
-            const data = req.params;
-            const userid = data + "";
+            const { id: userid } = req.params;
             const response = await userService_.deleteUser(userid);
             res.status(response.status_code).json(response);
         }
@@ -64,9 +62,8 @@ class UserController {
     async update(req, res) {
         const userService_ = typedi_1.default.get(service_1.default);
         try {
-            const data = req.params;
+            const { id: userid } = req.params;
             const updatedata = req.body;
-            const userid = data + "";
             const response = await userService_.update(userid, updatedata);
             res.status(response.status_code).json(response);
         }

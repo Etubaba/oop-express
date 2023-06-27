@@ -1,9 +1,9 @@
 import { Routes } from "../../../../interface/routes.interface";
 import TransactionsController from "../controller";
-export declare class TransactionRoute implements Routes {
+export declare class InvestmentRoute implements Routes {
     path: string;
     router: import("express-serve-static-core").Router;
-    User: TransactionsController;
+    Transact: TransactionsController;
     constructor();
     private initializeRoutes;
 }

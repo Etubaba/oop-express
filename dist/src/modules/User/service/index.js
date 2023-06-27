@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-const HttpException_1 = require("@/utils/HttpException");
+const HttpException_1 = require("../../../utils/HttpException");
 const client_1 = require("@prisma/client");
 const typedi_1 = require("typedi");
 let userService = class userService {

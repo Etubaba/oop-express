@@ -18,8 +18,8 @@ class UserRoute {
         this.router.post(`${this.path}/add_transaction`, (0, validation_middleware_1.ValidationMiddleware)(create_transaction_dto_1.CreateTrnDto), this.User.creatuser_transation);
         this.router.get(`${this.path}`, this.User.findAll);
         this.router.patch(`${this.path}/update`, (0, validation_middleware_1.ValidationMiddleware)(update_user_dto_1.UpdateUserDto), this.User.update);
-        this.router.post(`${this.path}/:id(\\d+)`, this.User.findOne);
-        this.router.delete(`${this.path}/:id(\\d+)`, this.User.deleteUser);
+        this.router.post(`${this.path}/:id`, this.User.findOne);
+        this.router.delete(`${this.path}/:id`, this.User.deleteUser);
     }
 }
 exports.UserRoute = UserRoute;

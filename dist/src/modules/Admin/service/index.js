@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const typedi_1 = require("typedi");
-const HttpException_1 = require("@/utils/HttpException");
+const HttpException_1 = require("../../../utils/HttpException");
 const client_1 = require("@prisma/client");
 const argon = tslib_1.__importStar(require("argon2"));
 let adminService = class adminService {

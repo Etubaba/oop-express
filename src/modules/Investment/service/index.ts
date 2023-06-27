@@ -1,6 +1,6 @@
 import { Service } from "typedi";
 import { CreateInvestmentDto } from "../dto/create-investment.dto";
-import { HttpException } from "@/utils/HttpException";
+import { HttpException } from "../../../utils/HttpException";
 import { PrismaClient } from "@prisma/client";
 import { UpdateInvestmentDto } from "../dto/update-investment.dto";
 import { UpdateInvestmentOptDto } from "../dto/update-investmentOpt.dto";

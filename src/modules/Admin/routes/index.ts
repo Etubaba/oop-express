@@ -2,7 +2,7 @@ import { Router } from "express";
 import { Routes } from "../../../../interface/routes.interface";
 import AdminController from "../controller";
 import { CreateAdminDto } from "../dto/create-admin.dto";
-import { ValidationMiddleware } from "@/middleware/validation.middleware";
+import { ValidationMiddleware } from "../../../middleware/validation.middleware";
 
 export default class AdminRoute implements Routes {
     public path = '/admin';

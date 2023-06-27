@@ -4,7 +4,7 @@ const tslib_1 = require("tslib");
 const express_1 = require("express");
 const controller_1 = tslib_1.__importDefault(require("../controller"));
 const create_admin_dto_1 = require("../dto/create-admin.dto");
-const validation_middleware_1 = require("@/middleware/validation.middleware");
+const validation_middleware_1 = require("../../../middleware/validation.middleware");
 class AdminRoute {
     constructor() {
         this.path = '/admin';
