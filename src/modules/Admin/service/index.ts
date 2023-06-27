@@ -1,6 +1,6 @@
 import { Service } from "typedi";
 import { CreateAdminDto } from "../dto/create-admin.dto";
-import { HttpException } from "@/utils/HttpException";
+import { HttpException } from "../../../utils/HttpException";
 import { PrismaClient } from "@prisma/client";
 import * as argon from "argon2"
 
