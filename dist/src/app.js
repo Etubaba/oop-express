@@ -38,7 +38,7 @@ class App {
     }
     initializeMiddlewares() {
         // this.app.use(morgan(LOG_FORMAT, { stream }));
-        this.app.use((0, cors_1.default)({ origin: config_1.ORIGIN, credentials: config_1.CREDENTIALS }));
+        this.app.use((0, cors_1.default)({ origin: config_1.ORIGIN, credentials: config_1.CREDENTIALS, methods: config_1.METHODS }));
         this.app.use((0, hpp_1.default)());
         this.app.use((0, helmet_1.default)());
         this.app.use((0, compression_1.default)());

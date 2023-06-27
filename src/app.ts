@@ -6,7 +6,7 @@ import express from 'express';
 import helmet from 'helmet';
 import hpp from 'hpp';
 import morgan from 'morgan';
-import { NODE_ENV, PORT, LOG_FORMAT, ORIGIN, CREDENTIALS } from '../config';
+import { NODE_ENV, PORT, LOG_FORMAT, ORIGIN, CREDENTIALS, METHODS } from '../config';
 import { Routes } from '../interface/routes.interface';
 import { ErrorMiddleware } from './middleware/error.middleware';
 import Container from 'typedi';
@@ -50,7 +50,7 @@ export class App {
 
     private initializeMiddlewares() {
         // this.app.use(morgan(LOG_FORMAT, { stream }));
-        this.app.use(cors({ origin: ORIGIN, credentials: CREDENTIALS }));
+        this.app.use(cors({ origin: ORIGIN, credentials: CREDENTIALS, methods: METHODS }));
         this.app.use(hpp());
         this.app.use(helmet());
         this.app.use(compression());
