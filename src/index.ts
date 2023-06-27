@@ -7,6 +7,6 @@ import { UserRoute } from './modules/User/routes';
 
 ValidateEnv();
 
-const app = new App([new AuthRoute(), new AdminRoute(), new InvestmentRoute(), new UserRoute]);
+const app = new App([new AuthRoute(), new AdminRoute(), new InvestmentRoute(), new UserRoute()]);
 
 app.listen();

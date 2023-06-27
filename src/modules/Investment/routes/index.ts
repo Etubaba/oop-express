@@ -18,7 +18,6 @@ export class InvestmentRoute implements Routes {
         this.initializeRoutes();
 
     }
-
     private initializeRoutes() {
         this.router.patch(`${this.path}/update/:id/:planid`, ValidationMiddleware(UpdateInvestmentOptDto), this.Transact.updateinvestmentOpt);
         this.router.post(`${this.path}/create_plan/`, ValidationMiddleware(CreateInvestmentDto), this.Transact.create);
