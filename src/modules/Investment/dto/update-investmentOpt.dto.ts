@@ -2,7 +2,7 @@ import { IsNotEmpty, IsOptional } from 'class-validator';
 import { investmentOptDto } from './investmentOpt.dto';
 import { Transform } from 'class-transformer';
 
-export class UpdateInvestmentOptDto extends investmentOptDto {
+export class UpdateInvestmentOptDto {
     @IsNotEmpty()
     @Transform(({ value }) => Number(value))
     @IsNotEmpty()
