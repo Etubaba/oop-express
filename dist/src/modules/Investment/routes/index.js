@@ -19,7 +19,15 @@ class InvestmentRoute {
     initializeRoutes() {
         this.router.patch(`${this.path}/update/:id/:planid`, (0, validation_middleware_1.ValidationMiddleware)(update_investmentOpt_dto_1.UpdateInvestmentOptDto), this.Transact.updateinvestmentOpt);
         this.router.post(`${this.path}/create_plan/`, (0, validation_middleware_1.ValidationMiddleware)(create_investment_dto_1.CreateInvestmentDto), this.Transact.create);
-        this.router.post(`${this.path}/create_option/:id`, (0, validation_middleware_1.ValidationMiddleware)(investmentOpt_dto_1.investmentOptDto), this.Transact.createPlan);
+        this.router.post(`${this.path}/ @IsNotEmpty()
+    @Transform(({ value }) => Number(value))
+    @IsNotEmpty()
+    iof: number
+
+    @IsNotEmpty()
+    @Transform(({ value }) => Number(value))
+    @IsNotEmpty()
+    roi: number/:id`, (0, validation_middleware_1.ValidationMiddleware)(investmentOpt_dto_1.investmentOptDto), this.Transact.createPlan);
         this.router.get(`${this.path}/all/`, this.Transact.findAll);
         this.router.get(`${this.path}/:id/`, this.Transact.findOne);
         this.router.delete(`${this.path}/:id`, this.Transact.remove);

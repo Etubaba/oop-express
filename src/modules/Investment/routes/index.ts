@@ -21,7 +21,15 @@ export class InvestmentRoute implements Routes {
     private initializeRoutes() {
         this.router.patch(`${this.path}/update/:id/:planid`, ValidationMiddleware(UpdateInvestmentOptDto), this.Transact.updateinvestmentOpt);
         this.router.post(`${this.path}/create_plan/`, ValidationMiddleware(CreateInvestmentDto), this.Transact.create);
-        this.router.post(`${this.path}/create_option/:id`, ValidationMiddleware(investmentOptDto), this.Transact.createPlan);
+        this.router.post(`${this.path}/ @IsNotEmpty()
+    @Transform(({ value }) => Number(value))
+    @IsNotEmpty()
+    iof: number
+
+    @IsNotEmpty()
+    @Transform(({ value }) => Number(value))
+    @IsNotEmpty()
+    roi: number/:id`, ValidationMiddleware(investmentOptDto), this.Transact.createPlan);
         this.router.get(`${this.path}/all/`, this.Transact.findAll);
         this.router.get(`${this.path}/:id/`, this.Transact.findOne);
         this.router.delete(`${this.path}/:id`, this.Transact.remove);
