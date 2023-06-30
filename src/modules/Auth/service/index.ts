@@ -35,6 +35,7 @@ export default class authService {
         const checkRef = chechReferalCode()
         if (!checkRef) {
           return {
+            status_code: 404,
             status: false,
             message: "No user with such referal_code"
           }
@@ -61,6 +62,7 @@ export default class authService {
 
       if (checkEmail) {
         return {
+          status_code: 400,
           status: false,
           message: "Email already exists kindly login"
         }
@@ -75,6 +77,7 @@ export default class authService {
 
       if (checkPhone) {
         return {
+          status_code: 400,
           status: false,
           message: "Phone number already exists kindly login"
         }
@@ -100,6 +103,7 @@ export default class authService {
         },
       });
       return {
+        status_code: 200,
         status: true,
         message: "user created",
 
@@ -149,6 +153,7 @@ export default class authService {
 
       if (!user) {
         return {
+          status_code: 400,
           status: false,
           message: "Invalid email address or phone"
         }
@@ -158,12 +163,14 @@ export default class authService {
       const isValid = await argon.verify(user.password, logindata.password);
       if (!isValid) {
         return {
+          status_code: 400,
           status: false,
           message: "incorrect password"
         }
       }
       delete user?.password;
       return {
+        status_code: 200,
         message: 'login success',
         data: user
 
@@ -186,6 +193,7 @@ export default class authService {
 
       if (!user) {
         return {
+          status_code: 400,
           status: false,
           message: "Invalid email address or password"
         }
@@ -195,6 +203,7 @@ export default class authService {
       const isValid = await argon.verify(user.password, admindata.password);
       if (!isValid) {
         return {
+          status_code: 400,
           status: false,
           message: "incorrect password"
         }
@@ -202,6 +211,7 @@ export default class authService {
 
       delete user?.password;
       return {
+        status_code: 200,
         status: true,
         message: "Login success",
         ...user,
@@ -233,6 +243,7 @@ export default class authService {
 
       if (!checkIfEmailExist) {
         return {
+          status_code: 400,
           status: false,
           message: "Invalid email address"
         }
@@ -286,6 +297,7 @@ export default class authService {
       }
 
       return {
+        status_code: 200,
         status: true,
         message: "OTP sent successfully",
       }
@@ -314,6 +326,7 @@ export default class authService {
 
       if (!user) {
         return {
+          status_code: 400,
           status: false,
           message: "something is'nt correct try again"
         }
@@ -334,17 +347,21 @@ export default class authService {
           })
 
           return {
+            status_code: 200,
+
             status: true,
             message: "OTP verified"
           }
         } else {
           return {
+            status_code: 400,
             status: false,
             message: "OTP Incorrect"
           }
         }
       } else {
         return {
+          status_code: 400,
           status: false,
           message: "OTP Expired"
         }

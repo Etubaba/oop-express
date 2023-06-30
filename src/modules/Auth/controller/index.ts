@@ -18,7 +18,7 @@ export class AuthController {
             const { ref } = req.query
             const ref_code: string = ref + ""
             const response = await authService_.createUser(data, ref_code)
-            res.status(200).json(response);
+            res.status(response.status_code).json(response);
         } catch (error) {
             res.status(500).json({
                 message: error.message || 'Internal Server Error',
@@ -36,7 +36,7 @@ export class AuthController {
             const data: LoginDto = req.body
             const response = await userService_.loginUser(data)
 
-            res.status(200).json(response);
+            res.status(response.status_code).json(response);
         } catch (error) {
             res.status(500).json({
                 message: error.message || 'Internal Server Error',
@@ -51,7 +51,7 @@ export class AuthController {
         try {
             const data: LoginDto = req.body
             const response = await userService_.adminLogin(data)
-            res.status(200).json(response);
+            res.status(response.status_code).json(response);
         } catch (error) {
             res.status(500).json({
                 message: error.message || 'Internal Server Error',
@@ -71,7 +71,7 @@ export class AuthController {
         try {
             const data: Email = req.body
             const response = await userService_.sendOTP(data)
-            res.status(200).json(response);
+            res.status(response.status_code).json(response);
         } catch (error) {
             res.status(500).json({
                 message: error.message || 'Internal Server Error',
@@ -92,7 +92,7 @@ export class AuthController {
             const { email } = req.query
             const mail: string = email + ""
             const response = await userService_.verifyOTP(mail, data)
-            res.status(200).json(response);
+            res.status(response.status_code).json(response);
         } catch (error) {
             res.status(500).json({
                 message: error.message || 'Internal Server Error',
