@@ -21,7 +21,7 @@ export class UserRoute implements Routes {
         this.router.post(`${this.path}/add_transaction`, ValidationMiddleware(CreateTrnDto), this.User.creatuser_transation);
         this.router.get(`${this.path}`, this.User.findAll);
         this.router.patch(`${this.path}/update/:id`, ValidationMiddleware(UpdateUserDto), this.User.update);
-        this.router.post(`${this.path}/:id`, this.User.findOne);
+        this.router.get(`${this.path}/:id`, this.User.findOne);
         this.router.delete(`${this.path}/:id`, this.User.deleteUser);
 
     }
