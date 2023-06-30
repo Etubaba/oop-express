@@ -2,7 +2,7 @@ import { Transform } from 'class-transformer';
 import { IsNotEmpty, IsNumber, IsOptional } from 'class-validator';
 import { RegisterDto } from '../../Auth/Dto/register.dto';
 
-export class UpdateUserDto extends RegisterDto{
+export class UpdateUserDto {
 
     @IsNumber()
     @IsOptional()

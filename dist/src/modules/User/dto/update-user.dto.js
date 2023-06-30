@@ -4,8 +4,7 @@ exports.UpdateUserDto = void 0;
 const tslib_1 = require("tslib");
 const class_transformer_1 = require("class-transformer");
 const class_validator_1 = require("class-validator");
-const register_dto_1 = require("../../Auth/Dto/register.dto");
-class UpdateUserDto extends register_dto_1.RegisterDto {
+class UpdateUserDto {
 }
 exports.UpdateUserDto = UpdateUserDto;
 tslib_1.__decorate([

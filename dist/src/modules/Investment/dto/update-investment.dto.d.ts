@@ -1,4 +1,5 @@
-import { CreateInvestmentDto } from './create-investment.dto';
-export declare class UpdateInvestmentDto extends CreateInvestmentDto {
+export declare class UpdateInvestmentDto {
+    iof: number;
+    roi: number;
     status: boolean;
 }

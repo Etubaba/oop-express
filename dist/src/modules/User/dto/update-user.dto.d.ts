@@ -1,5 +1,4 @@
-import { RegisterDto } from '../../Auth/Dto/register.dto';
-export declare class UpdateUserDto extends RegisterDto {
+export declare class UpdateUserDto {
     deposit: number;
     profits: number;
     referal_award: number;
