@@ -27,6 +27,7 @@ let authService = class authService {
                 const checkRef = chechReferalCode();
                 if (!checkRef) {
                     return {
+                        status_code: 404,
                         status: false,
                         message: "No user with such referal_code"
                     };
@@ -47,6 +48,7 @@ let authService = class authService {
             });
             if (checkEmail) {
                 return {
+                    status_code: 400,
                     status: false,
                     message: "Email already exists kindly login"
                 };
@@ -58,6 +60,7 @@ let authService = class authService {
             });
             if (checkPhone) {
                 return {
+                    status_code: 400,
                     status: false,
                     message: "Phone number already exists kindly login"
                 };
@@ -80,6 +83,7 @@ let authService = class authService {
                 },
             });
             return {
+                status_code: 200,
                 status: true,
                 message: "user created",
             };
@@ -125,6 +129,7 @@ let authService = class authService {
             }
             if (!user) {
                 return {
+                    status_code: 400,
                     status: false,
                     message: "Invalid email address or phone"
                 };
@@ -132,12 +137,14 @@ let authService = class authService {
             const isValid = await argon.verify(user.password, logindata.password);
             if (!isValid) {
                 return {
+                    status_code: 400,
                     status: false,
                     message: "incorrect password"
                 };
             }
             user === null || user === void 0 ? true : delete user.password;
             return {
+                status_code: 200,
                 message: 'login success',
                 data: user
             };
@@ -158,6 +165,7 @@ let authService = class authService {
             });
             if (!user) {
                 return {
+                    status_code: 400,
                     status: false,
                     message: "Invalid email address or password"
                 };
@@ -166,12 +174,13 @@ let authService = class authService {
             const isValid = await argon.verify(user.password, admindata.password);
             if (!isValid) {
                 return {
+                    status_code: 400,
                     status: false,
                     message: "incorrect password"
                 };
             }
             user === null || user === void 0 ? true : delete user.password;
-            return Object.assign({ status: true, message: "Login success" }, user);
+            return Object.assign({ status_code: 200, status: true, message: "Login success" }, user);
         }
         catch (error) {
             throw new HttpException_1.HttpException(500, `${error.message}`);
@@ -195,6 +204,7 @@ let authService = class authService {
             });
             if (!checkIfEmailExist) {
                 return {
+                    status_code: 400,
                     status: false,
                     message: "Invalid email address"
                 };
@@ -243,6 +253,7 @@ let authService = class authService {
                 await emailService.SendEmail({ email: checkIfEmailExist.email, title: "OTP", html: resetEmail, noreply: true });
             }
             return {
+                status_code: 200,
                 status: true,
                 message: "OTP sent successfully",
             };
@@ -268,6 +279,7 @@ let authService = class authService {
             });
             if (!user) {
                 return {
+                    status_code: 400,
                     status: false,
                     message: "something is'nt correct try again"
                 };
@@ -282,12 +294,14 @@ let authService = class authService {
                         }
                     });
                     return {
+                        status_code: 200,
                         status: true,
                         message: "OTP verified"
                     };
                 }
                 else {
                     return {
+                        status_code: 400,
                         status: false,
                         message: "OTP Incorrect"
                     };
@@ -295,6 +309,7 @@ let authService = class authService {
             }
             else {
                 return {
+                    status_code: 400,
                     status: false,
                     message: "OTP Expired"
                 };
