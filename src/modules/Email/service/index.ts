@@ -13,8 +13,8 @@ export default class EmailService {
             secure: true,
             disableFileAccess: true,
             auth: {
-                user: 'bisotrade@gmail.com', // generated ethereal user
-                pass: process.env.EMAIL_PASSWORD, // generated ethereal password
+                user: 'Bitsotrades@gmail.com', // generated ethereal user
+                pass: "ivvifsimoxfhcyqi", // generated ethereal password
             },
         });
 
@@ -30,7 +30,7 @@ export default class EmailService {
         const { email, title, html, text, noreply }: EmailData = EmailProps;
         // send mail with defined transport object
         await transporter.sendMail({
-            from: "bisotrade@gmail.com", // sender address
+            from: "Bisotrades@gmail.com", // sender address
             to: email, // list of receivers
             subject: title, // Subject line
             html: html, // html body

@@ -102,6 +102,8 @@ export default class authService {
           referal_award: ref !== "undefined" ? chechReferalCode() ? 100 : 0 : 0
         },
       });
+
+      
       return {
         status_code: 200,
         status: true,

@@ -26,7 +26,5 @@ export class InvestmentRoute implements Routes {
         this.router.get(`${this.path}/:id/`, this.Transact.findOne);
         this.router.delete(`${this.path}/:id`, this.Transact.remove);
         this.router.patch(`${this.path}/plan/:id`, ValidationMiddleware(UpdateInvestmentDto), this.Transact.update);
-
-
     }
 }
